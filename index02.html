@@ -226,13 +226,11 @@
 
     <main id="parallax__cont">
         <section id="section1" class="parallax__item">
-            <span class="parallax__item__num">01</span>
             <div class="parallax__item__img"></div>
         </section>
         <!-- //section1 -->
 
         <section id="section2" class="parallax__item">
-            <span class="parallax__item__num">02</span>
             <div class="parallax__item__img i1"></div>
             <div class="parallax__item__img i2"></div>
             <div class="parallax__item__img i3"></div>
@@ -240,7 +238,6 @@
         <!-- //section2 -->
 
         <section id="section3" class="parallax__item">
-            <span class="parallax__item__num">03</span>
             <div class="parallax__item__img"></div>
             <div class="parallax__item__img"></div>
             <div class="parallax__item__img"></div>
@@ -251,13 +248,11 @@
         <!-- //section3 -->
 
         <section id="section4" class="parallax__item">
-            <span class="parallax__item__num">04</span>
             <div class="parallax__item__img"></div>
         </section>
         <!-- //section4 -->
 
         <section id="section5" class="parallax__item">
-            <span class="parallax__item__num">05</span>
             <div class="parallax__item__text t1">section5</div>
             <div class="parallax__item__text t2">section5</div>
             <div class="parallax__item__text t3">section5</div>
@@ -266,7 +261,6 @@
         <!-- //section5 -->
 
         <section id="section5-2" class="parallax__item">
-            <span class="parallax__item__num">05-2</span>
             <div class="parallax__item__text t1">section5</div>
             <div class="parallax__item__text t2">section5</div>
             <div class="parallax__item__text t3">section5</div>
@@ -275,13 +269,11 @@
         <!-- //section5-2 -->
 
         <section id="section6" class="parallax__item">
-            <span class="parallax__item__num">06</span>
             <div class="parallax__item__text">section6</div>
         </section>
         <!-- //section6 -->
 
         <section id="section7" class="parallax__item">
-            <span class="parallax__item__num">07</span>
             <div class="parallax__item__text t1">안녕하세여</div>
             <div class="parallax__item__text t2">차서은입니다</div>
             <div class="parallax__item__text t3">가나다라마바사아자차카타파하</div>
@@ -293,7 +285,6 @@
         <!-- //section7 -->
 
         <section id="section8" class="parallax__item">
-            <span class="parallax__item__num">08</span>
             <div class="parallax__item__text t1">section8 title1</div>
             <div class="parallax__item__text t2">section8 title2</div>
             <div class="parallax__item__text t3">section8 title3</div>
@@ -302,7 +293,6 @@
         <!-- //section8 -->
 
         <section id="section9" class="parallax__item">
-            <span class="parallax__item__num">09</span>
             <div class="parallax__item__img"></div>
         </section>
         <!-- //section9 -->
@@ -312,9 +302,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
     <script>
-        //01 이미지 애니메이션 주기
         const ani1 = gsap.timeline(); //타임라인 생성
-        //.to 요소를 현재 상태에서 지정된 값으로 변환 -- 현재 상태에서 목표 값으로 애니메이션
+        //.to 요소를 현재 상태에서 지정된 값으로 변환 ****현재 상태에서 목표 값으로 애니메이션
         ani1.to("#section1 .parallax__item__img", { rotation: 720, scale: 0, borderRadius: 200 }) //첫 번째 애니메이션
             .to("#section1 .parallax__item__img", { rotation: 0, scale: 1, borderRadius: 0 }) // 두 번째 애니메이션
 
@@ -329,9 +318,8 @@
             markers: true
         });
 
-        //02 이미지 순차적으로 나오기
         const ani2 = gsap.timeline();
-        // .from 요소를 지정된 값에서 현재 상태로 변환 -- 초기 값에서 현재 상태로 애니메이션
+        // .from 요소를 지정된 값에서 현재 상태로 변환 ****초기 값에서 현재 상태로 애니메이션
         // autoAlpha: opacity와 visibility를 동시에 제어할 수 있는 속성
         ani2.from("#section2 .i1", { y: -100, autoAlpha: 0, borderRadius: 200 })
             .from("#section2 .i2", { y: 100, autoAlpha: 0, borderRadius: 200 })
@@ -348,7 +336,6 @@
             markers: false
         });
 
-        //03 이미지 랜덤으로 나오기
         const ani3 = gsap.timeline();
         ani3.from("#section3 .parallax__item__img", {
             autoAlpha: 0,
@@ -371,7 +358,6 @@
             anticipatePin: 1,
         });
 
-        //04 이미지 축소하기
         const ani4 = gsap.timeline();
         ani4.from("#section4 .parallax__item__img", {
             autoAlpha: 0,
@@ -390,9 +376,8 @@
             anticipatePin: 1
         });
 
-        //05 텍스트 애니메이션
         const ani5 = gsap.timeline();
-        //"text"는 레이블을 의미 --여러 애니메이션을 동시에 시작하고나 특정 시점에 정렬할 수 있음
+        //"text"는 레이블을 의미 ****여러 애니메이션을 동시에 시작하고나 특정 시점에 정렬할 수 있음
         ani5.to("#section5 .t1", { xPercent: 300 }, "text")
             .to("#section5 .t2", { xPercent: -300 }, "text")
             .to("#section5 .t3", { xPercent: 300 }, "text")
@@ -408,7 +393,6 @@
             anticipatePin: 1
         })
 
-        //05-2 텍스트 애니메이션(레이블 사용)
         const ani5second = gsap.timeline()
         // "myLabel"이라는 레이블을 타임라인의 1초 지점에 추가
         ani5second.addLabel("myLabel", 1)
@@ -427,7 +411,6 @@
             anticipatePin: 1
         });
 
-        //06 텍스트 확대
         const ani6 = gsap.timeline();
         ani6.to("#section6 .parallax__item__text", { scale: 100, duration: 2 })
             .to("#section6 .parallax__item__text", { autoAlpha: 0 })
@@ -443,7 +426,6 @@
             // markers: true
         });
 
-        //07 텍스트 제자리 애니메이션
         const ani7 = gsap.timeline();
         ani7.from("#section7 .t1", { autoAlpha: 0, duration: 1, y: 50 }, "+=1")
             .from("#section7 .t2", { autoAlpha: 0, duration: 1, y: 50 }, "+=1")
@@ -463,7 +445,6 @@
             anticipatePin: 1
         });
 
-        //08 텍스트 애니메이션
         const ani8 = gsap.timeline();
         ani8.from("#section8 .t1", { x: innerWidth * 1 })
             .from("#section8 .t2", { x: innerWidth * -1 })
@@ -480,7 +461,6 @@
             anticipatePin: 1
         })
 
-        //09 이미지 확대하기
         const ani9 = gsap.timeline();
         ani9.to("#section9 .parallax__item__img", {scale: 13})
             .to("#section9 .parallax__item__img", {autoAlpha: 0})
